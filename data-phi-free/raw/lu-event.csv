@@ -1,0 +1,22 @@
+event_name,description,category,event_ids,tracked,notes
+system_shutdown,System shutdown,local,13,TRUE,
+system_reboot,System reboot,local,1074,TRUE,
+system_error,System errors,local,15;30;137;1053;1054;1129;1130;4202;5719;7011;7023;7046;10016;36874;36888,TRUE,
+application_shutdown,Application shutdown,local,17147;8225;19032,TRUE,
+application_restart,Application restart,local,10000,TRUE,
+application_error,Application errors,local,12289;455;489;1008;490;4005;12291;2004;25725;8198,TRUE,
+file_creation,File creation,local,4663,FALSE,Requires an additional Group Policy
+file_deletion,File deletion,local,4660,FALSE,Requires an additional Group Policy
+file_modification,File modification,local,,FALSE,Requires an additional Group Policy
+logon_fail,Failed log-ons,local,4625,TRUE,
+logon_success,successful log-ons,local,4624,TRUE,
+security_policy_modification,Security policy modifications,local,,FALSE,
+admin_privileges_used,Use of administrator privileges,local,17201,Maybe,We're not sure how/if this is tracked
+packet_denials_untrusted_network,Log packet screening denials originating from un-trusted networks,perimeter,,FALSE,Ask Campus IT for this information.  We don't think it's available to the local machine.
+packet_denials_trusted_network,Packet screening denials originating from trusted networks,perimeter,,FALSE,Ask Campus IT for this information.  We don't think it's available to the local machine.
+user_account_management,User account management,perimeter,,FALSE,Ask Campus IT for this information.  We don't think it's available to the local machine.
+packet_filter_modification,Modification of packet filters,perimeter,,FALSE,Ask Campus IT for this information.  We don't think it's available to the local machine.
+application_error_perimeter,Application errors,perimeter,,FALSE,Ask Campus IT for this information.  We don't think it's available to the local machine.
+system_shutdown_reboot_permiter,System shutdown and reboot,perimeter,,FALSE,Ask Campus IT for this information.  We don't think it's available to the local machine.
+system_error_perimeter,System errors,perimeter,,FALSE,Ask Campus IT for this information.  We don't think it's available to the local machine.
+proxy_services_modification,Modification of proxy services,perimeter,,FALSE,Ask Campus IT for this information.  We don't think it's available to the local machine.
