@@ -1,0 +1,20 @@
+$events = Get-WinEvent ForwardedEvents |  Select-Object ID, LevelDisplayName, LogName, MachineName, Message, ProviderName, RecordID, TaskDisplayName, TimeCreated  
+ 
+$connectionString = "Data Source=sqlserver;Integrated Security=true;Initial Catalog=EventCollections;"
+$bulkCopy = new-object ("Data.SqlClient.SqlBulkCopy") $connectionString
+$bulkCopy.DestinationTableName = "GeneralEvents"
+$dt = New-Object "System.Data.DataTable"
+ 
+# build the datatable
+$cols = $events | select -first 1 | get-member -MemberType NoteProperty | select -Expand Name
+foreach ($col in $cols)  {$null = $dt.Columns.Add($col)}
+  
+foreach ($event in $events)
+  {
+     $row = $dt.NewRow()
+     foreach ($col in $cols) { $row.Item($col) = $event.$col }
+     $dt.Rows.Add($row)
+  }
+  
+ # Write to the database!
+ $bulkCopy.WriteToServer($dt)

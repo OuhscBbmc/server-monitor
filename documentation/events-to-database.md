@@ -1,0 +1,1 @@
+The mechanism for transporting the events tot he database was take from the article, [Importing Windows Forwarded Events into SQL Server using PowerShell](https://blog.netnerds.net/2013/03/importing-windows-forwarded-events-into-sql-server-using-powershell/) by [Chrissy LeMaire](https://blog.netnerds.net/author/chrissy/).
